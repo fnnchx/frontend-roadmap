@@ -11,11 +11,53 @@
             <h1>Каталог книг</h1>
             <p>Добро пожаловать!</p>
             <p>Добро пожаловать в наш каталог книг!</p>
+            <form>
+                <input type="text" required minlength="2" placeholder="Введите название книги">
+                <button type="submit">Поиск</button>
+            </form>
         </header> 
         <main>
             <section>
                 <h2>Популярные книги</h2>
             </section>
+            <label for="search">
+                Название книги
+            </label>
+            <p></p>
+            <label for="genre">
+                Жанр:
+            </label>
+                <select id="genre">
+        <option value="all">Все жанры</option>
+        <option value="fantasy">Фантастика</option>
+        <option value="detective">Детектив</option>
+        <option value="novel">Роман</option>
+        <option value="science">Научная литература</option>
+    </select>
+    <button type="submit">
+        Найти
+    </button>
+    <p></p>
+    <input type="checkbox">Только доступные
+    <label>
+    <input
+        type="radio"
+        name="sort"
+        value="newest"
+    >
+    Сначала новые
+</label>
+
+<label>
+    <input
+        type="radio"
+        name="sort"
+        value="oldest"
+    >
+    Сначала старые
+</label>
+    <button type="submit">Найти</button>
+    <button type="reset">Сбросить</button>
             <article>
                 <h3>1984</h3>
                 <img height="300" width="190" src="1984.jpg" alt="Обложка книги «1984»">
