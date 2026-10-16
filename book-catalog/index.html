@@ -1,77 +1,106 @@
 <!DOCTYPE html>
-<html lang="ru"> 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="favicon.ico">
-        <title>Книжный каталог</title>
-    </head>
-    <body>
-        <header>
-            <h1>Каталог книг</h1>
-            <p>Добро пожаловать!</p>
-            <p>Добро пожаловать в наш каталог книг!</p>
-            <form>
-                <input type="text" required minlength="2" placeholder="Введите название книги">
-                <button type="submit">Поиск</button>
-            </form>
-        </header> 
-        <main>
-            <section>
-                <h2>Популярные книги</h2>
-            </section>
-            <label for="search">
-                Название книги
-            </label>
-            <p></p>
-            <label for="genre">
-                Жанр:
-            </label>
-                <select id="genre">
-        <option value="all">Все жанры</option>
-        <option value="fantasy">Фантастика</option>
-        <option value="detective">Детектив</option>
-        <option value="novel">Роман</option>
-        <option value="science">Научная литература</option>
-    </select>
-    <button type="submit">
-        Найти
-    </button>
-    <p></p>
-    <input type="checkbox">Только доступные
-    <label>
-    <input
-        type="radio"
-        name="sort"
-        value="newest"
-    >
-    Сначала новые
-</label>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assests/favicon.ico">
+    <title>Книжный каталог</title>
+</head>
+<body>
 
-<label>
-    <input
-        type="radio"
-        name="sort"
-        value="oldest"
-    >
-    Сначала старые
-</label>
-    <button type="submit">Найти</button>
-    <button type="reset">Сбросить</button>
-            <article>
-                <h3>1984</h3>
-                <img height="300" width="190" src="1984.jpg" alt="Обложка книги «1984»">
-                <p><strong>Автор:</strong> Джордж Оруэлл</p>
-                <a href="#">Подробнее</a>
-            </article>
-            <article>
-                <h3>Тихий Дэн</h3>
-                <img src="boocover.webp" alt="Обложка книги «Тихий Дэн»">
-                <p><strong>Автор:</strong> Роман Мальцев</p>
-                <a href="#">Подробнее</a>
-            </article>
-        </main>
-        <footer>
+    <header>
+        <h1>Каталог книг</h1>
+        <p>Добро пожаловать!</p>
+        <p>Добро пожаловать в наш каталог книг!</p>
+
+        <form>
+            <input type="text" required minlength="2" placeholder="Введите название книги">
+            <button aria-label="Поиск">🔍</button>
+        </form>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Популярные книги</h2>
+        </section>
+        <form>
+            <label for="search">Название книги</label>
+            <p></p>
+
+            <label for="genre">Жанр:</label>
+            <select id="genre">
+                <option value="all">Все жанры</option>
+                <option value="fantasy">Фантастика</option>
+                <option value="detective">Детектив</option>
+                <option value="novel">Роман</option>
+                <option value="science">Научная литература</option>
+            </select>
+
+            <button type="submit">Найти</button>
+
+            <p></p>
+
+            <input type="checkbox">Только доступные
+
+            <label>
+                <input type="radio" name="sort" value="newest">
+                Сначала новые
+            </label>
+
+            <label>
+                <input type="radio" name="sort" value="oldest">
+                Сначала старые
+            </label>
+
+            <button type="submit">Найти</button>
+            <button type="reset">Сбросить</button>
+        </form>
+
+        <article>
+            <h3>1984</h3>
+            <img height="300" width="190" src="assests/1984.jpg" alt="Обложка книги «1984»">
+            <p><strong>Автор:</strong> Джордж Оруэлл</p>
+            <a href="#">Подробнее</a>
+        </article>
+
+        <article>
+            <h3>Тихий Дэн</h3>
+            <img src="assests/boocover.webp" alt="Обложка книги «Тихий Дэн»">
+            <p><strong>Автор:</strong> Роман Мальцев</p>
+            <a href="#">Подробнее</a>
+        </article>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Автор</th>
+                    <th>Жанр</th>
+                    <th>Год</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1984</td>
+                    <td>Джордж Оруэлл</td>
+                    <td>Антиутопия</td>
+                    <td>1949</td>
+                </tr>
+
+                <tr>
+                    <td>Тихий Дэн</td>
+                    <td>Роман Мальцев</td>
+                    <td>Боевик</td>
+                    <td>2025</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+    <footer>
         <ul>
             <li>Фантастика</li>
             <li>Детективы</li>
@@ -79,6 +108,6 @@
             <li>Научная литература</li>
         </ul>
         <a href="#">Посмотреть книги</a>
-        </footer>
-    </body>
+    </footer>
+</body>
 </html>
