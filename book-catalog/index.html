@@ -25,6 +25,7 @@
         <section>
             <h2>Популярные книги</h2>
         </section>
+
         <form>
             <label for="search">Название книги</label>
             <p></p>
@@ -58,19 +59,41 @@
             <button type="reset">Сбросить</button>
         </form>
 
-        <article>
-            <h3>1984</h3>
-            <img height="300" width="190" src="assests/1984.jpg" alt="Обложка книги «1984»">
-            <p><strong>Автор:</strong> Джордж Оруэлл</p>
-            <a href="#">Подробнее</a>
-        </article>
+        <div class="container">
+            <div class="books">
 
-        <article>
-            <h3>Тихий Дэн</h3>
-            <img src="assests/boocover.webp" alt="Обложка книги «Тихий Дэн»">
-            <p><strong>Автор:</strong> Роман Мальцев</p>
-            <a href="#">Подробнее</a>
-        </article>
+                <article class="book-card">
+                    <button class="favorite" type="button" aria-label="Добавить в избранное">♡</button>
+                    <h3 class="book-title">1984</h3>
+                    <img height="300" width="190" src="assests/1984.jpg" alt="Обложка книги «1984»">
+                    <p><strong>Автор:</strong> Джордж Оруэлл</p>
+                    <a href="#">Подробнее</a>
+                </article>
+
+                <article class="book-card">
+                    <button class="favorite" type="button" aria-label="Добавить в избранное">♡</button>
+                    <h3 class="book-title">Тихий Дэн</h3>
+                    <img src="assests/boocover.webp" alt="Обложка книги «Тихий Дэн»">
+                    <p><strong>Автор:</strong> Роман Мальцев</p>
+                    <a href="#">Подробнее</a>
+                </article>
+
+            </div>
+        </div>
+
+        <section class="favorites">
+            <h2>Избранное</h2>
+                <div class="books">
+                    <article class="book-card">
+                        <button class="favorite" type="button" aria-label="Убрать из избранного">❤</button>
+                        <h3 class="book-title">1984</h3>
+                        <img height="280" width="180" src="assests/1984.jpg" alt="Обложка книги «1984»">
+                        <p><strong>Автор:</strong> Джордж Оруэлл</p>
+                        <a href="#">Подробнее</a>
+                    </article>
+                </div>
+        </section>
+
 
         <table>
             <thead>
@@ -108,7 +131,7 @@
             <li>Романы</li>
             <li>Научная литература</li>
         </ul>
-        <a href="#">Посмотреть книги</a>
+        <a href="#" class="button">Посмотреть книги</a>
     </footer>
 </body>
 </html>
