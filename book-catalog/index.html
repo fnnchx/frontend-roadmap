@@ -4,134 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assests/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Книжный каталог</title>
+    <script src="./script.js" defer></script>
+    <title>ozon671 | Книжный каталог</title>
 </head>
 <body>
 
-    <header>
-        <h1>Каталог книг</h1>
-        <p>Добро пожаловать!</p>
-        <p>Добро пожаловать в наш каталог книг!</p>
-
-        <form>
-            <input type="text" required minlength="2" placeholder="Введите название книги">
-            <button aria-label="Поиск">🔍</button>
-        </form>
+    <!-- Навигация -->
+    <header class="site-header">
+        <div class="logo">ozon671</div>
+        <nav>
+            <ul>
+                <li><a href="#books-section">Книги</a></li>
+                <li><a href="#favorites-section">Избранное</a></li>
+            </ul>
+        </nav>
+        <div class="social-links">
+            <a href="https://www.youtube.com/ozon671games3" aria-label="Youtube">yt</a>
+            <a href="t.me/ O_J6YXRB5UxjN2Qy" aria-label="Telegram">t</a>
+            <a href="audioknigax@rambler.ru" aria-label="Audio books">a</a>
+        </div>
     </header>
 
     <main>
-
-        <section>
-            <h2>Популярные книги</h2>
-        </section>
-
-        <form>
-            <label for="search">Название книги</label>
-            <p></p>
-
-            <label for="genre">Жанр:</label>
-            <select id="genre">
-                <option value="all">Все жанры</option>
-                <option value="fantasy">Фантастика</option>
-                <option value="detective">Детектив</option>
-                <option value="novel">Роман</option>
-                <option value="science">Научная литература</option>
-            </select>
-
-            <button type="submit">Найти</button>
-
-            <p></p>
-
-            <input type="checkbox">Только доступные
-
-            <label>
-                <input type="radio" name="sort" value="newest">
-                Сначала новые
-            </label>
-
-            <label>
-                <input type="radio" name="sort" value="oldest">
-                Сначала старые
-            </label>
-
-            <button type="submit">Найти</button>
-            <button type="reset">Сбросить</button>
-        </form>
-
-        <div class="container">
-            <div class="books">
-
-                <article class="book-card">
-                    <button class="favorite" type="button" aria-label="Добавить в избранное">♡</button>
-                    <h3 class="book-title">1984</h3>
-                    <img height="300" width="190" src="assests/1984.jpg" alt="Обложка книги «1984»">
-                    <p><strong>Автор:</strong> Джордж Оруэлл</p>
-                    <a href="#">Подробнее</a>
-                </article>
-
-                <article class="book-card">
-                    <button class="favorite" type="button" aria-label="Добавить в избранное">♡</button>
-                    <h3 class="book-title">Тихий Дэн</h3>
-                    <img src="assests/boocover.webp" alt="Обложка книги «Тихий Дэн»">
-                    <p><strong>Автор:</strong> Роман Мальцев</p>
-                    <a href="#">Подробнее</a>
-                </article>
-
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Найдите свою следующую любимую книгу в нашем каталоге.</h1>
+                <br>
+                <form id="search-form" class="search-form">
+                    <input type="text" id="search-input" required minlength="2" placeholder="Введите название или автора...">
+                    <button type="submit" aria-label="Поиск">Найти</button>
+                </form>
             </div>
-        </div>
-
-        <section class="favorites">
-            <h2>Избранное</h2>
-                <div class="books">
-                    <article class="book-card">
-                        <button class="favorite" type="button" aria-label="Убрать из избранного">❤</button>
-                        <h3 class="book-title">1984</h3>
-                        <img height="280" width="180" src="assests/1984.jpg" alt="Обложка книги «1984»">
-                        <p><strong>Автор:</strong> Джордж Оруэлл</p>
-                        <a href="#">Подробнее</a>
-                    </article>
+            <div class="hero-image-wrapper">
+                <div class="circle-bg"></div>
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop" alt="Счастливая читательница" class="hero-img-person">
+                <div class="book-cover-wrapper">
+                    <div class="book-cover">
+                        <span class="author-name">Мальцев Р. А.</span>
+                        <h2 class="book-title-hero">Тихий Дэн</h2>
+                        <span class="book-badge">Хитяра</span>
+                    </div>
                 </div>
+                <div class="gold-blob blob-1"></div>
+                <div class="gold-blob blob-2"></div>
+            </div>
         </section>
 
+        <div id="status-message" class="status-message" aria-live="polite"></div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Название</th>
-                    <th>Автор</th>
-                    <th>Жанр</th>
-                    <th>Год</th>
-                </tr>
-            </thead>
+        <section id="books-section" class="catalog-section">
+            <h2 class="section-title">Результаты поиска</h2>
+            <div class="books-grid" id="books-container">
+            </div>
+        </section>
 
-            <tbody>
-                <tr>
-                    <td>1984</td>
-                    <td>Джордж Оруэлл</td>
-                    <td>Антиутопия</td>
-                    <td>1949</td>
-                </tr>
-
-                <tr>
-                    <td>Тихий Дэн</td>
-                    <td>Роман Мальцев</td>
-                    <td>Боевик</td>
-                    <td>2025</td>
-                </tr>
-            </tbody>
-        </table>
-
+        <section id="favorites-section" class="catalog-section favorites-section">
+            <h2 class="section-title">Ваше избранное</h2>
+            <div class="books-grid" id="favorites-container">
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <ul>
-            <li>Фантастика</li>
-            <li>Детективы</li>
-            <li>Романы</li>
-            <li>Научная литература</li>
-        </ul>
-        <a href="#" class="button">Посмотреть книги</a>
+    <footer class="site-footer">
+        <p>&copy; 2026 ozon671 Books. Все права защищены.</p>
     </footer>
 </body>
 </html>
