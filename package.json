@@ -1,13 +1,15 @@
 {
-  "dependencies": {
-    "vite": "^8.3.7"
-  },
   "name": "frontend-roadmap",
   "version": "1.0.0",
   "description": "Simple Book catalog application",
   "scripts": {
-    "dev": "echo \"Development server will be added in the next topic\""
+    "dev": "vite",
+    "buid": "vite build",
+    "previe": "vite preview"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^8.3.7"
+  }
 }
